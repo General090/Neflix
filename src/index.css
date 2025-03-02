@@ -11,3 +11,13 @@
     font-weight: 700;
     font-size: 3.5rem;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  
