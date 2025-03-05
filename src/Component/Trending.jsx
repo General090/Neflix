@@ -77,18 +77,16 @@ const Trending = () => {
 
           <div ref={scrollRef} className="flex overflow-x-scroll no-scrollbar gap-2 scroll-smooth">
             {movies.map((movie, index) => (
-              <div key={movie.id} className="relative px-5 flex-shrink-0 w-[230px]">
+              <button key={movie.id} className="relative px-5 flex-shrink-0 w-[230px] transition-transform duration-600 ease-in-out transform hover:scale-105 py-5 cursor-pointer">
                 <img 
-  src={movie.image}
-  className="rounded-lg w-full transition-transform duration-300 ease-in-out transform hover:scale-110"
-  alt={`Movie ${index + 1}`}
-/>
-
-
-                <span className="absolute top-30 left-[-1.3rem] text-9xl font-bold text-black px-3 py-1 [text-shadow:_1px_1px_0_white,_-1px_-1px_0_white,_1px_-1px_0_white,_-1px_1px_0_white]">
+                  src={movie.image}
+                  className="rounded-lg w-full"
+                  alt={`Movie ${index + 1}`}
+                />
+                <span className="absolute top-44 left-[-0.6rem] text-8xl font-bold text-black px-3 py-1 [text-shadow:_1px_1px_0_white,_-1px_-1px_0_white,_1px_-1px_0_white,_-1px_1px_0_white]">
                   {index + 1}
                 </span>
-              </div>
+              </button>
             ))}
           </div>
 
