@@ -24,9 +24,9 @@ const Home = () => {
 
   return (
     <section className="home-image">
-      <header className="flex items-center pt-5 px-40">
+      <header className="flex items-center pt-7 lg:pt-5 px-7 lg:px-40">
         <div>
-          <img src={NetflixLogo} alt="Netflix Logo" className="w-44 fill-red-600" />
+          <img src={NetflixLogo} alt="Netflix Logo" className="w-28 lg:w-44 fill-red-600" />
         </div>
 
         <button className="ml-auto bg-red-600 text-white text-sm px-4 py-2 rounded font-netflix hover:bg-red-800 transition duration-500 cursor-pointer">
@@ -34,9 +34,9 @@ const Home = () => {
         </button>
       </header>
 
-      <div className="text-white text-center mt-32 font-netflix">
-        <h1 className="font-bold netflix-size">Unlimited movies, TV </h1>
-        <h1 className="font-bold netflix-size">shows, and more</h1>
+      <div className="text-white text-center mt-32 font-netflix text-[3.5rem] font-bold">
+        <h1 className="">Unlimited movies, TV </h1>
+        <h1 className="f">shows, and more</h1>
         <h3 className="text-xl font-bold mb-10">Starts at ₦2,200. Cancel anytime.</h3>
         <h4 className="mb-5">Ready to watch? Enter your email to create or restart your membership.</h4>
 
