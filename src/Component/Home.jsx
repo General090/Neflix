@@ -49,7 +49,7 @@ const Home = () => {
               onChange={handleEmailChange}
               className={`w-full h-14 px-4 pt-4 border ${
                 error ? "border-red-500" : email ? "border-green-500" : "border-gray-500"
-              } rounded bg-transparent text-white placeholder-transparent focus:outline-none focus:ring-2 ${
+              } rounded bg-[#0F0F0F] text-white placeholder-transparent focus:outline-none focus:ring-2 ${
                 error ? "focus:ring-red-500" : "focus:ring-white"
               }`}
               placeholder="Email address"
@@ -80,26 +80,6 @@ const Home = () => {
             <SlArrowRight className="w-5 h-5" />
           </button>
         </div>
-      </div>
-
-
-      <div className="relative w-full max-w-full mx-auto mt-20 p-0 rounded-lg shadow-sm">
-        <svg width="100%" height="80" viewBox="0 0 300 40" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="redFadeGradient" x1="0%" y1="0%" x2="100%">
-              <stop offset="0%" stopColor="#e50914" />
-              <stop offset="50%" stopColor="#e50914" />
-              <stop offset="100%" stopColor="#e50914" />
-            </linearGradient>
-          </defs>
-        
-          <path 
-            d="M 0 40 A 150 40 0 0 1 300 40" 
-            fill="none" 
-            stroke="url(#redFadeGradient)" 
-            strokeWidth="1"
-          />
-        </svg>
       </div>
     </section>
   );
