@@ -84,7 +84,6 @@ const Home = () => {
 
 
       <div className="relative w-full max-w-full mx-auto mt-20 p-0 rounded-lg shadow-sm">
-      {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full"> */}
         <svg width="100%" height="80" viewBox="0 0 300 40" preserveAspectRatio="none">
           <defs>
             <linearGradient id="redFadeGradient" x1="0%" y1="0%" x2="100%">
@@ -102,7 +101,6 @@ const Home = () => {
           />
         </svg>
       </div>
-    {/* </div> */}
     </section>
   );
 };

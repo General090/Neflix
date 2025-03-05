@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Reasons = () => {
+const Footer = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Reasons = () => {
   )
 }
 
-export default Reasons
+export default Footer
