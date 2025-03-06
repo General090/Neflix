@@ -34,14 +34,14 @@ const Home = () => {
         </button>
       </header>
 
-      <div className="text-white text-center mt-32 font-netflix text-[3.5rem] font-bold">
-        <h1 className="">Unlimited movies, TV </h1>
-        <h1 className="f">shows, and more</h1>
-        <h3 className="text-xl font-bold mb-10">Starts at ₦2,200. Cancel anytime.</h3>
-        <h4 className="mb-5">Ready to watch? Enter your email to create or restart your membership.</h4>
-
-        <div className="flex justify-center items-center gap-3 max-w-2xl mx-auto w-full">
-          <div className="relative flex-grow max-w-sm">
+      <div className="text-white text-center mt-28 lg:mt-32 font-netflix lg:text-[3.5rem] text-[2rem]">
+        <h1 className="font-bold">Unlimited movies, TV </h1>
+        <h1 className="font-bold">shows, and more</h1>
+        <h3 className="mb-4 lg:mb-10 text-[17px] lg:text-[20px]">Starts at ₦2,200. Cancel anytime.</h3>
+        <h4 className="mb-5 text-[18px] lg:text-[17px] px-7">Ready to watch? Enter your email to create or restart your membership.</h4>
+      </div>
+      <div className="gap-3 max-w-2xl mx-7 lg:mx-auto w-full flex justify-center items-center">
+          <div className="relative flex-grow max-w-auto lg:max-w-sm">
             <input
               type="email"
               id="email"
@@ -80,7 +80,6 @@ const Home = () => {
             <SlArrowRight className="w-5 h-5" />
           </button>
         </div>
-      </div>
     </section>
   );
 };
