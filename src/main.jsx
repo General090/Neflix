@@ -7,6 +7,8 @@ import Reasons from './Component/Reasons.jsx'
 import Questions from './Component/Questions.jsx'
 import Footer from './Component/Footer.jsx'
 
+
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Home />

@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import NetflixLogo from '../Assets/netflix-logo.svg';
 import { SlArrowRight } from "react-icons/sl";
 import { SlClose } from "react-icons/sl";
 
 const Home = () => {
-  const navigate = useNavigate();
 
   const [isFocused, setIsFocused] = useState(false);
   const [email, setEmail] = useState("");
@@ -32,7 +30,7 @@ const Home = () => {
           <img src={NetflixLogo} alt="Netflix Logo" className="w-28 lg:w-44 fill-red-600" />
         </div>
 
-        <button className="ml-auto bg-red-600 text-white text-sm px-4 py-2 rounded font-netflix hover:bg-red-800 transition duration-500 cursor-pointer" onClick={() => navigate("/signin")}>
+        <button className="ml-auto bg-red-600 text-white text-sm px-4 py-2 rounded font-netflix hover:bg-red-800 transition duration-500 cursor-pointer">
           Sign in
         </button>
       </header>
