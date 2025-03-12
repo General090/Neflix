@@ -15,66 +15,81 @@ import { SlArrowRight } from "react-icons/sl";
 import Ada from '../Assets/ada.jpg'
 import Demon from '../Assets/demon.jpg'
 import Counter from '../Assets/counter.jpg'
+import Formula from '../Assets/formula.jpg'
+import Agent from '../Assets/agent.jpg'
+import Door from '../Assets/door.jpg'
+import Action from '../Assets/action.jpg'
+import Life from '../Assets/life.jpg'
+import Delle from '../Assets/delle.jpg'
+import Prison from '../Assets/prison.jpg'
 import svg1 from '../Assets/svg1.png'
 import svg2 from '../Assets/svg2.png'
 import svg3 from '../Assets/svg3.png'
-
-
+import svg4 from '../Assets/svg4.png'
+import svg5 from '../Assets/svg5.png'
+import svg6 from '../Assets/svg6.png'
+import svg7 from '../Assets/svg7.png'
+import svg8 from '../Assets/svg8.png'
+import svg9 from '../Assets/svg9.png'
+import svg10 from '../Assets/svg10.png'
 
 const Trending = () => {
-  
   const movies = [
     { id: 1, image: first, image2: Ada, header: svg1, atrr: ["2023", "13+", "Movie", "Dramas"], description: "As a young woman prepares for her wedding, a secret from the past surfaces that threatens herfamily, her identity and everything she thought she knew."},
     { id: 2, image: second, image2: Counter, header: svg2, atrr: ["2025", "16+","Movie", "Action", "Thriller"], description: "When a hostage rescue mission creates a new enemy, Capt. Guerrero and his elite soldiers must face an ambush by a criminal group."  },
     { id: 3, image: third, image2: Demon, header: svg3, atrr: ["2025", "18+","Movie", "Action", "Thriller"], description: "Framed for his family's murder and left for dead, an ex-hitman will stop at nothing to exact revenge on the masked demons who have taken over his city." },
-    { id: 4, image: fourth },
-    { id: 5, image: five },
-    { id: 6, image: six },
-    { id: 7, image: seven },
-    { id: 8, image: eight },
-    { id: 9, image: nine },
-    { id: 10, image: ten },
+    { id: 4, image: fourth, image2: Formula, header: svg4, atrr: ["2025", "18+","Show", "Documentaries", "Sports"], description: "Drivers, managers and team owners live life in the fast lane — both on and off the track — during each cutthroat season of Formula 1 racing."},
+    { id: 5, image: five, image2: Agent, header: svg5, atrr: ["2025", "18+", "Show", "Action", "Thriller", "Mysteries"], description: "Brought together by a midnight phone call, an FBI agent and a cybersecurity expert must unravel an ever-growing web of political conspiracies." },
+    { id: 6, image: six, image2: Door, header: svg6, atrr: ["2024", "16+", "Show", "Dramas"], description: "A man's life unravels when he is elected as the new king of his village, only for an ancient prophecy to challenge his reign with blood and fury." },
+    { id: 7, image: seven, image2: Action, header: svg7, atrr: ["2025", "13+","Movie", "Comedies", "Action"], description: "Fifteen years after vanishing from the CIA to start a family, elite spies Matt and Emily jump back into the world of espionage when their cover is blown." },
+    { id: 8, image: eight, image2: Life, header: svg8, atrr: ["2025", "13+","Show", "Romance", "Dramas"], description: "In Jeju, a spirited girl and a steadfast boy's island story blossoms into a lifelong tale of setbacks and triumphs — proving love endures across time." },
+    { id: 9, image: nine, image2: Delle, header: svg9, atrr: ["2025", "16+","Movie", "Thrillers"], description: "During their vacation in the French countryside, a wealthy German family becomes entangled with a young hotel worker harboring sinister intentions." },
+    { id: 10, image: ten, image2: Prison, header: svg10, atrr: ["2017", "16+", "Show", "Action", "Thrillers"], description: "When his brother is wrongly convicted of murder, a structural engineer resolves to bust his sibling out of the notorious Fox River State Penitentiary." },
   ];
 
-  const [selectedMovie, setSelectedMovie] = useState(null);
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const handleMovieClick = (movie) => {
-    setSelectedMovie(movie);
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
-  const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) {
-      closeModal();
-    }
-  };
-  
-
+  // State for managing the scrollable content
   const scrollRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
 
+  // State for managing the modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentMovie, setCurrentMovie] = useState(null);
+  
+  // Scroll functionality
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const { scrollLeft, clientWidth, scrollWidth } = scrollRef.current;
-      const scrollAmount = clientWidth * 0.7; // Adjust scroll distance
-      const newScrollPosition =
-        direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount;
-      scrollRef.current.scrollTo({ left: newScrollPosition, behavior: "smooth" });
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollAmount = clientWidth * 0.7;
+      const newScrollPosition = direction === "left" 
+        ? scrollLeft - scrollAmount 
+        : scrollLeft + scrollAmount;
+        
+      scrollRef.current.scrollTo({ 
+        left: newScrollPosition, 
+        behavior: "smooth" 
+      });
     }
   };
 
+  // Open modal with selected movie
+  const openMovieDetails = (movie) => {
+    setCurrentMovie(movie);
+    setIsModalOpen(true);
+  };
+
+  // Close modal
+  const closeMovieDetails = () => {
+    setIsModalOpen(false);
+  };
+
+  // Update arrow visibility based on scroll position
   useEffect(() => {
     const handleScroll = () => {
       if (scrollRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
         setShowLeftArrow(scrollLeft > 0);
-        setShowRightArrow(scrollLeft < scrollWidth - clientWidth);
+        setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
       }
     };
 
@@ -90,25 +105,98 @@ const Trending = () => {
     };
   }, []);
 
+  // Control body scroll when modal is open
   useEffect(() => {
-  if (modalOpen) {
-    document.body.style.overflow = "hidden"; // Disable scrolling
-  } else {
-    document.body.style.overflow = "auto"; // Enable scrolling
-  }
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
-  return () => {
-    document.body.style.overflow = "auto"; // Reset when unmounted
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isModalOpen]);
+
+  // Movie Item Component
+  const MovieItem = ({ movie, index }) => (
+    <div 
+      className="relative px-5 flex-shrink-0 w-[230px] transition-transform duration-600 ease-in-out transform hover:scale-105 py-5 cursor-pointer" 
+      onClick={() => openMovieDetails(movie)}
+    >
+      <img 
+        src={movie.image}
+        className="rounded-lg w-full"
+        alt={`Movie ${index + 1}`}
+      />
+      <span className="absolute top-44 left-[-0.6rem] text-8xl font-bold text-black px-3 py-1 [text-shadow:_1px_1px_0_white,_-1px_-1px_0_white,_1px_-1px_0_white,_-1px_1px_0_white]">
+        {index + 1}
+      </span>
+    </div>
+  );
+
+  // Modal Component
+  const MovieModal = () => {
+    if (!isModalOpen || !currentMovie) return null;
+    
+    return (
+      // Modal Overlay
+      <div className="fixed inset-0 bg-opacity-75 flex items-center justify-center z-50">
+        {/* Modal Container */}
+        <div className="relative bg-[#161616] w-[50%] rounded-md shadow-2xl h-[90%] overflow-y-auto">
+          {/* Close Button */}
+          <button 
+            className="absolute top-4 right-4 text-white z-30 bg-opacity-50 rounded-full p-1 hover:bg-blur-sm hover:bg-gray-400 transition-colors"
+            onClick={closeMovieDetails}
+          >
+            <RiCloseLargeFill size={30} />
+          </button>
+          
+          {/* Movie Banner */}
+          <div className="w-full flex relative items-end">
+            <div className="bg-gradient-to-t from-[#161616] w-full absolute h-full z-20"></div>
+            <img 
+              src={currentMovie.image2}
+              className="w-full h-full object-cover object-top opacity-80"
+              alt={`${currentMovie.id} banner`}
+            />
+            
+            <div className="absolute left-10 z-20 w-[45%]">
+              <img src={currentMovie.header} alt="movie title" />
+            </div>
+          </div>
+
+          {/* Movie Details */}
+          <div className="bg-[#161616] px-10 mb-10 mt-5">
+            <div className="flex flex-wrap gap-2 mb-6">
+              {currentMovie.atrr.map((attr, index) => (
+                <span key={index} className="px-2 py-1 bg-[#414141] bg-opacity-20 rounded text-sm text-[#ADADAD]">
+                  {attr}
+                </span>
+              ))}
+            </div>
+            
+            <p className="mb-6 text-gray-300 leading-relaxed text-[18px] font-netflix pb-5">
+              {currentMovie.description}
+            </p>
+            
+            <button className="bg-red-600 text-white text-[18px] font-netflix py-3 px-6 rounded flex items-center gap-2 hover:bg-red-700 transition duration-300">
+              Get Started <SlArrowRight className="w-4 h-5" />
+            </button>
+          </div>
+        </div>
+      </div>
+    );
   };
-}, [modalOpen]);
-
 
   return (
     <div className="bg-black text-white pb-20 relative">
       <div className="px-40">
         <h1 className="font-netflix pt-14 text-3xl">Trending Now</h1>
 
+        {/* Scrollable Movie List */}
         <div className="relative flex items-center mt-5">
+          {/* Left Scroll Arrow */}
           {showLeftArrow && (
             <button
               onClick={() => scroll("left")}
@@ -118,21 +206,17 @@ const Trending = () => {
             </button>
           )}
 
-          <div ref={scrollRef} className="flex overflow-x-scroll no-scrollbar gap-2 scroll-smooth">
+          {/* Movie List */}
+          <div 
+            ref={scrollRef} 
+            className="flex overflow-x-scroll no-scrollbar gap-2 scroll-smooth"
+          >
             {movies.map((movie, index) => (
-              <div key={movie.id} className="relative px-5 flex-shrink-0 w-[230px] transition-transform duration-600 ease-in-out transform hover:scale-105 py-5 cursor-pointer" onClick={() => handleMovieClick(movie)}>
-                <img 
-                  src={movie.image}
-                  className="rounded-lg w-full"
-                  alt={`Movie ${index + 1}`}
-                />
-                <span className="absolute top-44 left-[-0.6rem] text-8xl font-bold text-black px-3 py-1 [text-shadow:_1px_1px_0_white,_-1px_-1px_0_white,_1px_-1px_0_white,_-1px_1px_0_white]">
-                  {index + 1}
-                </span>
-              </div>
+              <MovieItem key={movie.id} movie={movie} index={index} />
             ))}
           </div>
 
+          {/* Right Scroll Arrow */}
           {showRightArrow && (
             <button
               onClick={() => scroll("right")}
@@ -144,60 +228,10 @@ const Trending = () => {
         </div>
       </div>
 
-      {modalOpen && selectedMovie && (
-        <div 
-          className="fixed inset-0 flex items-center justify-center z-50 p-4"
-          onClick={handleOverlayClick}
-        >
-          <div className="relative bg-[#161616] w-[50%] rounded-md overflow-hidden shadow-2xl h-[95%] overflow-y-auto">
-
-            <button 
-              className="absolute top-4 right-4 text-white z-10 p-1 bg-opacity-50 rounded-full hover:bg-opacity-70 transition duration-300"
-              onClick={closeModal}
-            >
-              <RiCloseLargeFill size={30} />
-            </button>
-            
-            {/* Movie banner image */}
-            <div className="w-full flex relative items-end">
-              <div className=" bg-gradient-to-t from-[#161616] w-full absolute h-full z-20 "> 
-              </div>
-              <img 
-                src={selectedMovie.image2}
-                className="w-full h-full object-cover object-top opacity-80"
-              />
-              
-              {/* Title overlay on image */}
-              <div className="absolute left-10 z-20 w-[45%]">
-                <img src={selectedMovie.header} />
-              </div>
-            </div>
-            
-            {/* Movie details */}
-            <div className="bg-[#161616] px-10 mb-10 mt-5">
-              <div className="flex gap-2 mb-6 text-[#ADADAD]">
-                {
-                  selectedMovie.atrr.map((attr, index) => (
-                    <span key={index} className="flex items-center gap-2 text-[#ADADAD]">
-                      <span className="px-2 py-1 bg-[#414141] bg-opacity-20 rounded text-sm">{attr}</span>
-                    </span>
-                  ))
-                }
-                 </div>
-              
-              <p className="mb-6 text-gray-300 leading-relaxed text-[18px] font-netflix pb-5">
-                {selectedMovie.description}
-              </p>
-              
-              <button className="bg-red-600 text-white text-[18px] font-netflix py-3 px-6 rounded flex items-center gap-2 hover:bg-red-700 transition duration-300">
-                Get Started <SlArrowRight className="w-4 h-5" />
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Movie Details Modal */}
+      <MovieModal />
     </div>
   );
-}; 
+};
 
 export default Trending;
