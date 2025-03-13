@@ -23,7 +23,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="bg-black px-6 sm:px-40 flex flex-col items-center pt-7 w-full pb-10">
+    <div className="bg-black px-40 flex flex-col items-center pt-7 w-full pb-10">
       <p className="text-white text-center pb-5 text-md max-w-2xl">
         Ready to watch? Enter your email to create or restart your membership
       </p>

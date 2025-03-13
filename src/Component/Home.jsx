@@ -41,7 +41,7 @@ const Home = () => {
         <h3 className="mb-4 lg:mb-10 text-[17px] lg:text-[20px]">Starts at ₦2,200. Cancel anytime.</h3>
         <h4 className="mb-5 text-[18px] lg:text-[17px] px-7">Ready to watch? Enter your email to create or restart your membership.</h4>
       </div>
-      <div className="gap-3 max-w-2xl mx-7 lg:mx-auto w-full flex justify-center items-center">
+      <div className="flex flex-col gap-4 max-w-4xl lg:mx-auto lg:w-full lg:flex justify-center items-center">
           <div className="relative flex-grow max-w-auto lg:max-w-sm">
             <input
               type="email"
@@ -75,12 +75,12 @@ const Home = () => {
 
           <button
             type="submit"
-            className="cursor-pointer bg-red-600 text-2xl h-14 px-8 text-white rounded font-bold flex items-center justify-center gap-2 hover:bg-red-800 transition duration-500 min-w-[180px]"
+            className="cursor-pointer bg-red-600 text-2xl h-14 px-8 text-white rounded font-bold flex items-center justify-center gap-2 hover:bg-red-800 transition duration-500 lg:min-w-[180px]"
           >
             Get Started
             <SlArrowRight className="w-5 h-5" />
           </button>
-        </div>
+      </div>
     </section>
   );
 };

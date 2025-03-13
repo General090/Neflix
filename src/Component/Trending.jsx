@@ -191,8 +191,8 @@ const Trending = () => {
 
   return (
     <div className="bg-black text-white pb-20 relative">
-      <div className="px-40">
-        <h1 className="font-netflix pt-14 text-3xl">Trending Now</h1>
+      <div className="px-7 lg:px-40">
+        <h1 className="font-netflix pt-14 lg:text-3xl">Trending Now</h1>
 
         {/* Scrollable Movie List */}
         <div className="relative flex items-center mt-5">
