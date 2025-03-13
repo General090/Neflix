@@ -41,15 +41,16 @@ const Home = () => {
         <h3 className="mb-4 md:mb-10 text-[17px] lg:text-[20px]">Starts at ₦2,200. Cancel anytime.</h3>
         <h4 className="mb-5 text-[18px] md:text-[17px] px-7">Ready to watch? Enter your email to create or restart your membership.</h4>
       </div>
-      <div className="flex flex-col gap-3 max-w-2xl md:mx-auto md:w-full md:flex md:flex-row justify-center items-center">
 
-      <div className="relative flex-grow w-90 lg:w-full max-w-md lg:max-w-sm">
+      <div className="flex flex-col gap-7 max-w-2xl md:mx-auto md:w-full md:flex md:flex-row justify-center items-center">
+        <div className="flex flex-col w-full md:w-auto">
+          <div className="relative flex-grow max-w-md md:max-w-sm flex justify-center w-full">
             <input
               type="email"
-              id="email"                                                                                   
+              id="email"
               value={email}
               onChange={handleEmailChange}
-              className={`w-full h-12 lg:h-14 px-4 pt-4 border ${
+              className={`w-[90%] md:w-[400px] h-12 md:h-14 p-4 border ${
                 error ? "border-red-500" : email ? "border-green-500" : "border-gray-500"
               } rounded bg-[#0F0F0F] text-white placeholder-transparent focus:outline-none focus:ring-2 ${
                 error ? "focus:ring-red-500" : "focus:ring-white"
@@ -60,28 +61,30 @@ const Home = () => {
             />
             <label
               htmlFor="email"
-              className={`absolute left-4 text-gray-400 text-sm transition-all ${
+              className={`absolute left-10 md:left-4 text-gray-400 text-sm transition-all ${
                 isFocused || email ? "top-2 text-xs text-white" : "top-4 text-base"
               }`}
             >
               Email address
             </label>
-            {error && (
-              <div className="absolute -bottom-6 left-0 flex items-center gap-1">
-                <SlClose className="text-red-500" />
-                <p className="text-red-500 text-sm">{error}</p>
-              </div>
-            )}
           </div>
+          {error && (
+            <div className="flex items-center gap-1 mt-1">
+              <SlClose className="text-red-500" />
+              <p className="text-red-500 text-sm">{error}</p>
+            </div>
+          )}
+        </div>
 
-          <button
-            type="submit"
-            className="cursor-pointer bg-red-600 text-sm lg:text-2xl h-12 lg:h-14 px-8 text-white rounded font-bold flex items-center justify-center gap-2 hover:bg-red-800 transition duration-500 lg:min-w-[180px]"
-          >
-            Get Started
-            <SlArrowRight className="w-4 h-4 lg:w-5 lg:h-5" />
-          </button>
+  <button
+    type="submit"
+    className="cursor-pointer bg-red-600 text-sm md:text-2xl h-12 md:h-14 px-8 text-white rounded font-bold flex items-center justify-center gap-2 hover:bg-red-800 transition duration-500 md:min-w-[180px] md:self-start"
+  >
+    Get Started
+    <SlArrowRight className="w-4 h-4 lg:w-5 lg:h-5" />
+  </button>
       </div>
+
     </section>
   );
 };

@@ -121,7 +121,7 @@ const Trending = () => {
   // Movie Item Component
   const MovieItem = ({ movie, index }) => (
     <div 
-      className="relative px-1 lg:px-5 flex-shrink-0 lg:w-[230px] w-[180px] transition-transform duration-600 ease-in-out transform hover:scale-105 py-5 cursor-pointer" 
+      className="relative px-0.5 lg:px-5 flex-shrink-0 lg:w-[230px] w-[140px] transition-transform duration-600 ease-in-out transform hover:scale-105 py-5 cursor-pointer" 
       onClick={() => openMovieDetails(movie)}
     >
       <img 
@@ -129,7 +129,7 @@ const Trending = () => {
         className="rounded-lg lg:w-full w-32"
         alt={`Movie ${index + 1}`}
       />
-      <span className="absolute top-44 left-[-0.6rem] text-6xl lg:text-8xl font-bold text-black px-3 py-1 [text-shadow:_1px_1px_0_white,_-1px_-1px_0_white,_1px_-1px_0_white,_-1px_1px_0_white]">
+      <span className="absolute top-35 lg:top-44 left-[-15px] lg:left-[-0.6rem] text-5xl lg:text-8xl font-bold text-black px-3 py-1 [text-shadow:_1px_1px_0_white,_-1px_-1px_0_white,_1px_-1px_0_white,_-1px_1px_0_white]">
         {index + 1}
       </span>
     </div>
@@ -141,12 +141,12 @@ const Trending = () => {
     
     return (
       // Modal Overlay
-      <div className="fixed inset-0 bg-opacity-75 flex items-center justify-center z-50">
+      <div className="fixed inset-0 bg-opacity-75 lg:flex items-center justify-center z-50 mt-40 lg:mt-0">
         {/* Modal Container */}
-        <div className="relative bg-[#161616] w-[50%] rounded-md shadow-2xl h-[90%] overflow-y-auto">
+        <div className="relative bg-[#161616] w-[26rem] lg:w-[50%] mx-auto md:w-[90%] rounded-xl lg:rounded-md shadow-2xl lg:h-[90%] h-[70%] overflow-y-auto">
           {/* Close Button */}
           <button 
-            className="absolute top-4 right-4 text-white z-30 bg-opacity-50 rounded-full p-1 hover:bg-blur-sm hover:bg-gray-400 transition-colors"
+            className="absolute top-7 md:top-4 right-4 text-white z-30 bg-opacity-50 rounded-full p-1 hover:bg-blur-sm hover:bg-gray-400 transition-colors"
             onClick={closeMovieDetails}
           >
             <RiCloseLargeFill size={30} />
@@ -161,13 +161,13 @@ const Trending = () => {
               alt={`${currentMovie.id} banner`}
             />
             
-            <div className="absolute left-10 z-20 w-[45%]">
+            <div className="absolute left-5 md:left-10 z-20 w-[45%]">
               <img src={currentMovie.header} alt="movie title" />
             </div>
           </div>
 
           {/* Movie Details */}
-          <div className="bg-[#161616] px-10 mb-10 mt-5">
+          <div className="bg-[#161616] px-5 md:px-10 mb-10 mt-5">
             <div className="flex flex-wrap gap-2 mb-6">
               {currentMovie.atrr.map((attr, index) => (
                 <span key={index} className="px-2 py-1 bg-[#414141] bg-opacity-20 rounded text-sm text-[#ADADAD]">
@@ -191,16 +191,16 @@ const Trending = () => {
 
   return (
     <div className="bg-black text-white pb-20 relative">
-      <div className="px-7 lg:px-40">
-        <h1 className="font-netflix pt-14 text-2xl lg:text-3xl">Trending Now</h1>
+      <div className="px-7 md:px-20 lg:px-40">
+        <h1 className="font-netflix pt-14 text-xl md:text-3xl">Trending Now</h1>
 
         {/* Scrollable Movie List */}
-        <div className="relative flex items-center mt-5">
+        <div className="relative flex items-center lg:mt-5 px-5">
           {/* Left Scroll Arrow */}
           {showLeftArrow && (
             <button
               onClick={() => scroll("left")}
-              className="absolute right-[66rem] z-10 py-14 bg-[#1A1A1A] bg-opacity-50 rounded-xl hover:bg-[#575555] transition duration-500 cursor-pointer"
+              className="absolute lg:right-[66rem] z-10 py-14 bg-[#1A1A1A] bg-opacity-50 rounded-xl hover:bg-[#575555] transition duration-500 cursor-pointer"
             >
               <ChevronLeft size={30} />
             </button>
@@ -209,7 +209,7 @@ const Trending = () => {
           {/* Movie List */}
           <div 
             ref={scrollRef} 
-            className="flex overflow-x-scroll no-scrollbar gap-2 scroll-smooth"
+            className="flex overflow-x-scroll no-scrollbar lg:gap-2 scroll-smooth"
           >
             {movies.map((movie, index) => (
               <MovieItem key={movie.id} movie={movie} index={index} />
@@ -220,7 +220,7 @@ const Trending = () => {
           {showRightArrow && (
             <button
               onClick={() => scroll("right")}
-              className="absolute left-[66rem] z-10 py-14 bg-[#1A1A1A] bg-opacity-50 rounded-xl hover:bg-[#575555] transition duration-500 cursor-pointer"
+              className="absolute left-[22rem] md:left-[38rem] lg:left-[66rem] z-10 py-14 bg-[#1A1A1A] bg-opacity-50 rounded-xl hover:bg-[#575555] transition duration-500 cursor-pointer"
             >
               <ChevronRight size={30} />
             </button>

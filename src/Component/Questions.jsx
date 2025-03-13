@@ -44,19 +44,19 @@ const FAQ = () => {
 
   return (
     <div className="bg-black px-7 lg:px-40 pb-10">
-      <h1 className="lg:text-3xl mb-6 text-white font-netflix">Frequently Asked Questions</h1>
+      <h1 className="md:text-3xl text-xl mb-6 text-white font-netflix">Frequently Asked Questions</h1>
       <div className="w-full">
         {faqs.map((faq, index) => (
           <div key={index} className="mb-2">
             <button
               onClick={() => toggleFAQ(index)}
-              className="text-white flex justify-between items-center w-full text-left bg-[#2d2d2d] p-4 hover:bg-[#444343] transition duration-300 py-4"
+              className="text-white flex justify-between items-center w-full text-left bg-[#2d2d2d] p-4 hover:bg-[#444343] transition duration-300 py-4 cursor-pointer"
             >
-              <span className="text-2xl font-netflix">{faq.question}</span>
-              {openIndex === index ? <IoCloseOutline size={50} /> : <FiPlus size={50} />}
+              <span className="text-lg lg:text-2xl font-netflix">{faq.question}</span>
+              {openIndex === index ? <IoCloseOutline className='text-3xl lg:text-5xl' /> : <FiPlus className='text-3xl lg:text-5xl' />}
             </button>
             {openIndex === index && (
-              <div className="bg-[#2d2d2d] mt-[1px] p-4 text-2xl font-netflix text-white">
+              <div className="bg-[#2d2d2d] mt-[1px] p-4 text-sm lg:text-2xl font-netflix text-white">
                 {faq.answer.split("\n").map((line, i) => (
                   <p key={i} className="mb-5">
                     {line}
