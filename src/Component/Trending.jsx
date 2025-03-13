@@ -121,15 +121,15 @@ const Trending = () => {
   // Movie Item Component
   const MovieItem = ({ movie, index }) => (
     <div 
-      className="relative px-5 flex-shrink-0 w-[230px] transition-transform duration-600 ease-in-out transform hover:scale-105 py-5 cursor-pointer" 
+      className="relative px-1 lg:px-5 flex-shrink-0 lg:w-[230px] w-[180px] transition-transform duration-600 ease-in-out transform hover:scale-105 py-5 cursor-pointer" 
       onClick={() => openMovieDetails(movie)}
     >
       <img 
         src={movie.image}
-        className="rounded-lg w-full"
+        className="rounded-lg lg:w-full w-32"
         alt={`Movie ${index + 1}`}
       />
-      <span className="absolute top-44 left-[-0.6rem] text-8xl font-bold text-black px-3 py-1 [text-shadow:_1px_1px_0_white,_-1px_-1px_0_white,_1px_-1px_0_white,_-1px_1px_0_white]">
+      <span className="absolute top-44 left-[-0.6rem] text-6xl lg:text-8xl font-bold text-black px-3 py-1 [text-shadow:_1px_1px_0_white,_-1px_-1px_0_white,_1px_-1px_0_white,_-1px_1px_0_white]">
         {index + 1}
       </span>
     </div>
@@ -192,7 +192,7 @@ const Trending = () => {
   return (
     <div className="bg-black text-white pb-20 relative">
       <div className="px-7 lg:px-40">
-        <h1 className="font-netflix pt-14 lg:text-3xl">Trending Now</h1>
+        <h1 className="font-netflix pt-14 text-2xl lg:text-3xl">Trending Now</h1>
 
         {/* Scrollable Movie List */}
         <div className="relative flex items-center mt-5">

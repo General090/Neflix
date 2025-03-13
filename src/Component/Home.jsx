@@ -25,9 +25,9 @@ const Home = () => {
 
   return (
     <section className="home-image">
-      <header className="flex items-center pt-7 lg:pt-5 px-7 lg:px-40">
+      <header className="flex items-center pt-7 lg:pt-5 px-7 md:px-20 lg:px-40">
         <div>
-          <img src={NetflixLogo} alt="Netflix Logo" className="w-28 lg:w-44 fill-red-600" />
+          <img src={NetflixLogo} alt="Netflix Logo" className="w-28 md:w-32 lg:w-44 fill-red-600" />
         </div>
 
         <button className="ml-auto bg-red-600 text-white text-sm px-4 py-2 rounded font-netflix hover:bg-red-800 transition duration-500 cursor-pointer">
@@ -35,20 +35,21 @@ const Home = () => {
         </button>
       </header>
 
-      <div className="text-white text-center mt-28 lg:mt-32 font-netflix lg:text-[3.5rem] text-[2rem]">
+      <div className="text-white text-center mt-34 md:mt-52 lg:mt-32 font-netflix md:text-[3rem] lg:text-[3.5rem] text-[2rem]">
         <h1 className="font-bold">Unlimited movies, TV </h1>
         <h1 className="font-bold">shows, and more</h1>
-        <h3 className="mb-4 lg:mb-10 text-[17px] lg:text-[20px]">Starts at ₦2,200. Cancel anytime.</h3>
-        <h4 className="mb-5 text-[18px] lg:text-[17px] px-7">Ready to watch? Enter your email to create or restart your membership.</h4>
+        <h3 className="mb-4 md:mb-10 text-[17px] lg:text-[20px]">Starts at ₦2,200. Cancel anytime.</h3>
+        <h4 className="mb-5 text-[18px] md:text-[17px] px-7">Ready to watch? Enter your email to create or restart your membership.</h4>
       </div>
-      <div className="flex flex-col gap-4 max-w-4xl lg:mx-auto lg:w-full lg:flex justify-center items-center">
-          <div className="relative flex-grow max-w-auto lg:max-w-sm">
+      <div className="flex flex-col gap-3 max-w-2xl md:mx-auto md:w-full md:flex md:flex-row justify-center items-center">
+
+      <div className="relative flex-grow w-90 lg:w-full max-w-md lg:max-w-sm">
             <input
               type="email"
-              id="email"
+              id="email"                                                                                   
               value={email}
               onChange={handleEmailChange}
-              className={`w-full h-14 px-4 pt-4 border ${
+              className={`w-full h-12 lg:h-14 px-4 pt-4 border ${
                 error ? "border-red-500" : email ? "border-green-500" : "border-gray-500"
               } rounded bg-[#0F0F0F] text-white placeholder-transparent focus:outline-none focus:ring-2 ${
                 error ? "focus:ring-red-500" : "focus:ring-white"
@@ -75,10 +76,10 @@ const Home = () => {
 
           <button
             type="submit"
-            className="cursor-pointer bg-red-600 text-2xl h-14 px-8 text-white rounded font-bold flex items-center justify-center gap-2 hover:bg-red-800 transition duration-500 lg:min-w-[180px]"
+            className="cursor-pointer bg-red-600 text-sm lg:text-2xl h-12 lg:h-14 px-8 text-white rounded font-bold flex items-center justify-center gap-2 hover:bg-red-800 transition duration-500 lg:min-w-[180px]"
           >
             Get Started
-            <SlArrowRight className="w-5 h-5" />
+            <SlArrowRight className="w-4 h-4 lg:w-5 lg:h-5" />
           </button>
       </div>
     </section>
