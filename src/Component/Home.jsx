@@ -2,6 +2,7 @@ import { useState } from "react";
 import NetflixLogo from '../Assets/netflix-logo.svg';
 import { SlArrowRight } from "react-icons/sl";
 import { SlClose } from "react-icons/sl";
+import { Link } from "react-router-dom";
 
 const Home = () => {
 
@@ -30,9 +31,11 @@ const Home = () => {
           <img src={NetflixLogo} alt="Netflix Logo" className="w-28 md:w-32 lg:w-44 fill-red-600" />
         </div>
 
-        <button className="ml-auto bg-red-600 text-white text-sm px-4 py-2 rounded font-netflix hover:bg-red-800 transition duration-500 cursor-pointer">
-          Sign in
-        </button>
+        <Link to="/signin" className="flex-end">
+          <button className="ml-auto bg-red-600 text-white text-sm px-4 py-2 rounded font-netflix hover:bg-red-800 transition duration-500 cursor-pointer">
+            Sign in
+          </button>
+        </Link>
       </header>
 
       <div className="text-white text-center mt-34 md:mt-52 lg:mt-32 font-netflix md:text-[3rem] lg:text-[3.5rem] text-[2rem]">
