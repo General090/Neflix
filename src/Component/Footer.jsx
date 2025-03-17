@@ -71,7 +71,7 @@ const Footer = () => {
   </button>
       </div>
 
-      <div className='text-[#a49c9c] text-left w-full mt-10'>
+      <div className='text-[#a49c9c] text-left w-full mt-10 cursor-pointer'>
         <div className="mb-10 underline">
             <a>Questions? <span>Contact us.</span></a>
         </div>
