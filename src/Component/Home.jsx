@@ -1,8 +1,12 @@
 import { useState } from "react";
 import NetflixLogo from '../Assets/netflix-logo.svg';
 import { SlArrowRight } from "react-icons/sl";
-import { SlClose } from "react-icons/sl";
+import { SlClose } from "react-icons/sl"; 
 import { Link } from "react-router-dom";
+import Trending from "./Trending.jsx";
+import Reasons from "./Reasons.jsx";
+import Questions from "./Questions.jsx";
+import Footer from "./Footer.jsx";
 
 const Home = () => {
 
@@ -26,12 +30,12 @@ const Home = () => {
 
   return (
     <section className="home-image">
-      <header className="flex items-center pt-7 lg:pt-5 px-7 md:px-20 lg:px-40">
+      <header className="flex items-center justify-between pt-7 lg:pt-5 px-7 md:px-20 lg:px-40">
         <div>
           <img src={NetflixLogo} alt="Netflix Logo" className="w-28 md:w-32 lg:w-44 fill-red-600" />
         </div>
 
-        <Link to="/signin" className="flex-end">
+        <Link to="/signin">
           <button className="ml-auto bg-red-600 text-white text-sm px-4 py-2 rounded font-netflix hover:bg-red-800 transition duration-500 cursor-pointer">
             Sign in
           </button>
@@ -45,7 +49,7 @@ const Home = () => {
         <h4 className="mb-5 text-[18px] md:text-[17px] px-7">Ready to watch? Enter your email to create or restart your membership.</h4>
       </div>
 
-      <div className="flex flex-col gap-7 max-w-2xl md:mx-auto md:w-full md:flex md:flex-row justify-center items-center">
+      <div className="flex flex-col gap-7 max-w-2xl md:mx-auto md:w-full md:flex md:flex-row justify-center items-center pb-16">
         <div className="flex flex-col w-full md:w-auto">
           <div className="relative flex-grow max-w-md md:max-w-sm flex justify-center w-full">
             <input
@@ -87,6 +91,13 @@ const Home = () => {
     <SlArrowRight className="w-4 h-4 lg:w-5 lg:h-5" />
   </button>
       </div>
+
+
+      {/* Other Sections */}
+      <Trending />
+      <Reasons />
+      <Questions />
+      <Footer />
 
     </section>
   );
