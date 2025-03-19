@@ -143,7 +143,7 @@ const Trending = () => {
       // Modal Overlay
       <div className="fixed inset-0 bg-opacity-75 lg:flex items-center justify-center z-50 mt-40 lg:mt-0">
         {/* Modal Container */}
-        <div className="relative bg-[#161616] w-[26rem] lg:w-[50%] mx-auto md:w-[90%] rounded-xl lg:rounded-md shadow-2xl lg:h-[90%] h-[70%] overflow-y-auto">
+        <div className="relative bg-[#161616] w-[20rem] lg:w-[50%] mx-auto md:w-[90%] rounded-xl lg:rounded-md shadow-2xl lg:h-[90%] h-[70%] overflow-y-auto">
           {/* Close Button */}
           <button 
             className="absolute top-7 md:top-4 right-4 text-white z-30 bg-opacity-50 rounded-full p-1 hover:bg-blur-sm hover:bg-gray-400 transition-colors"
