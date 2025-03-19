@@ -220,7 +220,7 @@ const Trending = () => {
           {showRightArrow && (
             <button
               onClick={() => scroll("right")}
-              className="absolute left-[20rem] md:left-[38rem] lg:left-[66rem] z-10 py-14 bg-[#1A1A1A] bg-opacity-50 rounded-xl hover:bg-[#575555] transition duration-500 cursor-pointer"
+              className="absolute left-[18rem] md:left-[38rem] lg:left-[66rem] z-10 py-14 bg-[#1A1A1A] bg-opacity-50 rounded-xl hover:bg-[#575555] transition duration-500 cursor-pointer"
             >
               <ChevronRight size={30} />
             </button>
