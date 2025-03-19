@@ -76,7 +76,7 @@ const Home = () => {
             </label>
           </div>
           {error && (
-            <div className="flex items-center gap-1 mt-1">
+            <div className="flex items-center gap-1 mt-1 ml-5 md:ml-0">
               <SlClose className="text-red-500" />
               <p className="text-red-500 text-sm">{error}</p>
             </div>

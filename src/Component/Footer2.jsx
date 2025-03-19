@@ -2,9 +2,9 @@ import React from 'react'
 
 const Footer2 = () => {
   return (
-    <section className='bg-[#161616] px-40 pt-20 pb-32 cursor-pointer'>
+    <section className='bg-[#161616] px-5 lg:px-40 pt-10 lg:pt-20 pb-10 lg:pb-32 cursor-pointer'>
       <h1 className='text-[#a49c9c] pb-5'>Question? <span>Contact us.</span></h1>
-      <div className='flex text-[#a49c9c] underline gap-32 text-sm'>
+      <div className='lg:flex text-[#a49c9c] underline gap-32 text-sm'>
         <div className='flex flex-col'>
           <a className='pb-5'>FAQ</a>
           <a>Cookie Preferences</a>
